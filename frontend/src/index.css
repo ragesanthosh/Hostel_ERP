@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+    font-family: var(--font-sans);
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.25s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/50 dark:border-slate-600 dark:bg-slate-800 dark:shadow-slate-950/50;
+  }
+
+  .input-base {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 transition-all placeholder:text-slate-400 hover:border-slate-300 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 focus:outline-none dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:hover:border-slate-500;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-primary-700 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition-all hover:bg-slate-50 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-100;
+  }
+
+  .panel {
+    @apply overflow-x-auto rounded-xl border bg-white shadow-sm dark:border-slate-600 dark:bg-slate-800;
+  }
+
+  .panel-head {
+    @apply bg-slate-50 dark:bg-slate-700/60;
+  }
+
+  .panel-row {
+    @apply hover:bg-slate-50 dark:hover:bg-slate-700/50;
+  }
+
+  .panel th {
+    @apply text-slate-500 dark:text-slate-400;
+  }
+
+  .panel td {
+    @apply text-slate-700 dark:text-slate-200;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-slate-900 dark:text-slate-100;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-slate-500 dark:text-slate-400;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-1 rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-500 dark:text-slate-200 dark:hover:bg-slate-700;
+  }
+
+  .form-control {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 disabled:bg-slate-100 dark:border-slate-500 dark:bg-slate-900 dark:text-slate-100 dark:disabled:bg-slate-800;
+  }
+
+  .form-label {
+    @apply mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300;
+  }
+
+  .content-card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-600 dark:bg-slate-800;
+  }
+
+  .table-th {
+    @apply px-4 py-3 text-left font-medium text-slate-500 dark:text-slate-400;
+  }
+
+  .table-td {
+    @apply px-4 py-3 text-slate-700 dark:text-slate-200;
+  }
+
+  .table-th-lg {
+    @apply px-6 py-3 text-left font-medium text-slate-500 dark:text-slate-400;
+  }
+
+  .table-td-lg {
+    @apply px-6 py-3 text-slate-700 dark:text-slate-200;
+  }
+
+  .nav-list-item {
+    @apply flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3 transition-all hover:border-primary-300 hover:bg-primary-50 dark:border-slate-600 dark:hover:border-primary-600 dark:hover:bg-slate-700;
+  }
+
+  .inner-card {
+    @apply rounded-xl bg-white p-4 dark:bg-slate-700/50;
+  }
+
+  .alert-error {
+    @apply rounded-xl border border-red-300 bg-red-50 p-4 text-sm text-red-800 dark:border-red-800 dark:bg-red-950/50 dark:text-red-200;
+  }
+
+  .alert-warning {
+    @apply rounded-xl border border-orange-300 bg-orange-50 p-4 text-sm text-orange-800 dark:border-orange-800 dark:bg-orange-950/50 dark:text-orange-200;
+  }
+
+  .alert-info {
+    @apply rounded-lg border border-blue-300 bg-blue-50 p-3 text-sm text-blue-800 dark:border-blue-800 dark:bg-blue-950/50 dark:text-blue-200;
+  }
+
+  .card-amber {
+    @apply border-amber-300 bg-amber-50/50 dark:border-amber-700 dark:bg-amber-950/30;
+  }
+
+  .card-emerald {
+    @apply border-emerald-300 bg-emerald-50/30 dark:border-emerald-700 dark:bg-emerald-950/30;
+  }
+
+  .card-rose {
+    @apply border-rose-300 bg-rose-50/50 dark:border-rose-700 dark:bg-rose-950/30;
+  }
+
+  .card-sky {
+    @apply border-sky-300 bg-sky-50/50 dark:border-sky-700 dark:bg-sky-950/30;
+  }
+
+  .stat-mini-emerald {
+    @apply rounded-xl bg-emerald-50 p-4 text-center dark:bg-emerald-950/40;
+  }
+
+  .stat-mini-amber {
+    @apply rounded-xl bg-amber-50 p-4 text-center dark:bg-amber-950/40;
+  }
+
+  .hostel-card-warn {
+    @apply border-orange-300 bg-orange-50 dark:border-orange-700 dark:bg-orange-950/40;
+  }
+
+  .icon-btn-edit {
+    @apply rounded p-1 text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-slate-700;
+  }
+
+  .icon-btn-delete {
+    @apply rounded p-1 text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-slate-700;
+  }
+
+  .field-select {
+    @apply rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100;
+  }
+
+  .field-search {
+    @apply w-full rounded-lg border border-slate-200 bg-white py-2 pl-10 pr-4 text-sm text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+}
