@@ -140,32 +140,6 @@ npm run dev
 - Frontend: http://localhost:5173
 - Backend API: http://localhost:5000/api
 
-## Seed Credentials
-
-### Admin
-| Field | Value |
-|-------|-------|
-| Name | System Admin |
-| Email | admin@college.edu |
-| PIN | 1234 |
-| Password | admin123 |
-
-### Wardens
-| Hostel | Email | Password |
-|--------|-------|----------|
-| Hostel 1 | warden1@college.edu | warden123 |
-| Hostel 2 | warden2@college.edu | warden123 |
-| Hostel 3 | warden3@college.edu | warden123 |
-
-### Students (password: `student123`)
-| Name | Reg No | Roll No | Email | Branch | Year |
-|------|--------|---------|-------|--------|------|
-| Rahul Verma | REG2024001 | 22CSE001 | rahul@college.edu | CSE | 2nd Year |
-| Priya Singh | REG2024002 | 22CSE002 | priya@college.edu | CSE | 2nd Year |
-| Amit Kumar | REG2024003 | 22CSE003 | amit@college.edu | CSE | 2nd Year |
-| Sneha Reddy | REG2024004 | 22ECE001 | sneha@college.edu | ECE | 2nd Year |
-| Vikram Joshi | REG2024005 | 22ECE002 | vikram@college.edu | ECE | 2nd Year |
-
 ## API Endpoints
 
 ### Auth
